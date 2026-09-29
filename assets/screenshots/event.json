@@ -1,0 +1,11 @@
+{
+    "event_type": "restricted_zone_intrusion",
+    "track_id": 697,
+    "class_id": 7,
+    "class_name": "truck",
+    "confidence": 0.31835806369781494,
+    "frame_index": 523,
+    "timestamp_sec": 16.561666666666667,
+    "x": 327.90185546875,
+    "y": 456.38983154296875
+}
