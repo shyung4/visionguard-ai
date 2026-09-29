@@ -4,12 +4,9 @@ from collections import deque
 from ultralytics import YOLO
 from event_engine import EventEngine
 from event_writer import EventWriter
+from utils import find_video
+import shutil
 
-video = "traffic_540_32fps.mp4"
-# video = "traffic_1080_32fps.mp4"
-
-video_path = Path("data/sample") / video
-output_name = Path(video).stem
 roi_path = Path("configs") / "roi.json"
 
 def load_roi(path, expected_video):
@@ -26,17 +23,31 @@ def load_roi(path, expected_video):
 
     return data["roi_polygon"]
 
-def main():
+def run_detection():
+    
+    video_path = find_video()
+    video = video_path.name
+    output_name = video_path.stem
     model = YOLO("yolo26n.pt")
     roi_polygon = load_roi(
     roi_path,
     expected_video=video,
     )
     event_engine = EventEngine(roi_polygon)
+
+    events_dir = (
+    Path("outputs")
+    / "events"
+    / video_path.stem
+    )
+
+    if events_dir.exists():
+        shutil.rmtree(events_dir)
+
     event_writer = EventWriter(
     output_root="outputs",
     video_name=video,
-)
+    )
 
     cap = cv2.VideoCapture(str(video_path))
 
@@ -259,6 +270,11 @@ def main():
 
     cv2.destroyAllWindows()
 
+    return (
+    Path("outputs")
+    / "events"
+    / video_path.stem
+)
 
 if __name__ == "__main__":
-    main()
+    run_detection()

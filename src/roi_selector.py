@@ -2,9 +2,11 @@ from pathlib import Path
 import json
 
 import cv2
+from utils import find_video
 
 
-video = "traffic_540_32fps.mp4"
+video_path = find_video()
+video = video_path.name
 
 video_path = Path("data/sample") / video
 output_path = Path("configs") / "roi.json"
