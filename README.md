@@ -1,3 +1,5 @@
+![VisionGuard AI Demo](assets/screenshots/demo.gif)
+
 # VisionGuard AI
 
 VisionGuard AI is an event-driven video analytics system that combines real-time computer vision with multimodal AI for automated incident detection and analysis.
@@ -184,4 +186,3 @@ Real-time computer vision first identifies candidate events, and the VLM is invo
 
 The codebase is modular, with detection, event logic, event persistence, VLM analysis, and UI separated into independent components.
 
-![VisionGuard AI Demo](assets/screenshots/demo.gif)
