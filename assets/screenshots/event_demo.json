@@ -1,0 +1,11 @@
+{
+    "event_type": "restricted_zone_intrusion",
+    "track_id": 10,
+    "class_id": 2,
+    "class_name": "car",
+    "confidence": 0.6350957751274109,
+    "frame_index": 15,
+    "timestamp_sec": 0.47500000000000003,
+    "x": 302.83270263671875,
+    "y": 394.3385009765625
+}

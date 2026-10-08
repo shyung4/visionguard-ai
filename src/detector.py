@@ -79,8 +79,8 @@ def run_detection():
         persist=True,
         save=True,
         classes=[0, 2, 5, 7],  # 0: person, 2: car, 5: bus, 7: truck
-        # conf=0.25,             # minimum detection confidence
-        # iou=0.7,               # IoU threshold
+        conf=0.5,             # minimum detection confidence
+        iou=0.7,               # IoU threshold
         # max_det=300,           # maximum detections per frame
         # agnostic_nms=False,    # class-agnostic NMS
         # nms=False,

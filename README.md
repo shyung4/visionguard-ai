@@ -184,4 +184,4 @@ Real-time computer vision first identifies candidate events, and the VLM is invo
 
 The codebase is modular, with detection, event logic, event persistence, VLM analysis, and UI separated into independent components.
 
-## Future Improvements
+![VisionGuard AI Demo](assets/screenshots/demo.gif)

@@ -1,0 +1,17 @@
+{
+    "event_valid": true,
+    "description": "The silver car tracked as car #10 is visibly occupying the marked restricted-zone polygon in the event keyframe. It appears to move slightly forward between the before, event, and after frames, remaining within or overlapping the ROI. Thus, a restricted-zone presence/intrusion is visually supported, although the exact moment it first entered is not established by these frames.",
+    "visual_evidence": [
+        "In the annotated event frame, car #10's bounding box substantially overlaps the red restricted-zone polygon.",
+        "The same silver car is visible in the before frame in approximately the same central-lane position, already near or overlapping the area corresponding to the ROI.",
+        "In the after frame, the silver car remains in essentially the same lane and continues to overlap or sit within the ROI area, with only slight forward movement.",
+        "The tracked object is visually a car; there is no clear indication that the box is attached to another object."
+    ],
+    "uncertainties": [
+        "The ROI is only explicitly drawn in the event frame, so its exact boundary in the clean frames must be inferred from the annotated frame.",
+        "Because the car appears already near or inside the ROI in the before frame, these images do not conclusively prove a new entry occurred at the event timestamp.",
+        "The bounding box and perspective make the precise position of the car's contact point with the ROI boundary somewhat ambiguous."
+    ],
+    "risk_level": "medium",
+    "recommended_action": "Treat as a likely valid restricted-zone intrusion/presence and retain for review, but verify the preceding tracking frames and ROI calibration before taking enforcement action based specifically on the claimed entry time."
+}
